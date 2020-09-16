@@ -4,4 +4,115 @@
   padding: 0;
   box-sizing: content-box;
 }
+body {
+  background-color: $background-color;
+  display: grid;
+  grid-template-columns: 1fr;
 
+  grid-template-rows: auto;
+  grid-template-areas:
+    "navbar"
+    "hero"
+    "moto"
+    "about";
+  img {
+    width: 100%;
+  }
+  .bg-img {
+    background-size: cover;
+    background-position: top center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  li {
+    direction: none;
+  }
+  #navbar {
+    .navbar {
+      z-index: 10;
+      position: fixed;
+      background-color: transparent;
+      grid-area: navbar;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: space-between;
+      width: 100%;
+      padding: 10px;
+      .bana {
+        width: 60px;
+      }
+    }
+  }
+  #hero {
+    .hero {
+      position: relative;
+      z-index: 1;
+      grid-area: hero;
+      height: 55vh;
+      background-image: url("/img/img.jpg");
+
+      top: 0;
+      left: 0;
+      background-color: gray;
+    }
+    .hero::after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+  .moto {
+    padding: 4rem;
+   
+    grid-area: moto;
+    p {
+      text-align: center;
+    }
+  }
+  #about {
+    .about {
+      grid-area: about;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+      padding: 6rem 2.5rem;
+      background-image: url("/img/img2.jpg");
+      z-index: 1;
+      color: white;
+      h1 {
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 1.5rem;
+      }
+      h1::after {
+        left: 0;
+        bottom: 0;
+        // margin-top: 10px;
+        content: " ";
+        position: absolute;
+        height: .05rem;
+        width: 6rem;
+        background-color: white;
+      }
+    }
+    .about::after {
+      top: 0;
+      left: 0;
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.9);
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}

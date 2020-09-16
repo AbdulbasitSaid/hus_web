@@ -1,8 +1,14 @@
 @import "config.scss";
+@import "util.scss";
 * {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+}
+html {
+  font: 13px "open-sans", sans-serif;
+  color: #464646;
+  scroll-behavior: smooth;
 }
 body {
   background-color: $background-color;
@@ -44,6 +50,9 @@ body {
       .bana {
         width: 60px;
       }
+      img{
+        filter: grayscale(1);
+      }
     }
   }
   #hero {
@@ -53,7 +62,6 @@ body {
       grid-area: hero;
       height: 55vh;
       background-image: url("/img/img.jpg");
-
       top: 0;
       left: 0;
       background-color: gray;
@@ -68,12 +76,18 @@ body {
       width: 100%;
       z-index: -1;
     }
+    a {
+      img {
+        filter: grayscale(1);
+      }
+    }
   }
   .moto {
     padding: 4rem;
-   
+
     grid-area: moto;
     p {
+      font-size: 16px;
       text-align: center;
     }
   }
@@ -99,7 +113,7 @@ body {
         // margin-top: 10px;
         content: " ";
         position: absolute;
-        height: .05rem;
+        height: 0.05rem;
         width: 6rem;
         background-color: white;
       }

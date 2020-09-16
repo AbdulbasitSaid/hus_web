@@ -1,7 +1,14 @@
+@import url("https://fonts.google.com/specimen/Open+Sans?sidebar.open=true&selection.family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800");
 * {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+}
+
+html {
+  font: 13px "open-sans", sans-serif;
+  color: #464646;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,6 +53,10 @@ body #navbar .navbar .bana {
   width: 60px;
 }
 
+body #navbar .navbar img {
+  filter: grayscale(1);
+}
+
 body #hero .hero {
   position: relative;
   z-index: 1;
@@ -68,12 +79,17 @@ body #hero .hero::after {
   z-index: -1;
 }
 
+body #hero a img {
+  filter: grayscale(1);
+}
+
 body .moto {
   padding: 4rem;
   grid-area: moto;
 }
 
 body .moto p {
+  font-size: 16px;
   text-align: center;
 }
 
@@ -100,7 +116,7 @@ body #about .about h1::after {
   bottom: 0;
   content: " ";
   position: absolute;
-  height: .05rem;
+  height: 0.05rem;
   width: 6rem;
   background-color: white;
 }

@@ -58,6 +58,7 @@ body {
   }
   #hero {
     .hero {
+      transition: 3s ease all;
       position: relative;
       z-index: 1;
       grid-area: hero;
@@ -108,6 +109,8 @@ body {
     }
   }
   .moto {
+    transition: 3s ease all;
+
     padding: 4rem;
 
     grid-area: moto;
@@ -118,6 +121,8 @@ body {
   }
   #about {
     .about {
+      transition: 3s ease all;
+
       grid-area: about;
       display: flex;
       flex-direction: column;
@@ -156,6 +161,8 @@ body {
   }
   #why-us {
     .why-us {
+      transition: 3s ease all;
+
       padding: 4rem;
       .why-text {
         background-color: $primary-color;
@@ -174,6 +181,8 @@ body {
   }
   #services {
     .services {
+      transition: 3s ease all;
+
       padding: 6rem 2rem;
       display: flex;
       flex-direction: column;
@@ -207,7 +216,6 @@ body {
           color: var(--color);
           width: 50px;
         }
-       
       }
       .service-item:hover {
         --color: #6eaf8d;
@@ -222,6 +230,22 @@ body {
         opacity: 0.9;
         position: absolute;
         z-index: -1;
+      }
+    }
+  }
+  #contact {
+    .contact {
+      min-height: 100vh;
+      .first-line{
+        background-color: $primary-color;
+        height: 20px;
+      }
+      .col-1{
+        padding: 0 4rem 4rem 4rem;
+        .contact-items{
+          background-color: $shade-color;
+          min-height: 60vw;
+        }
       }
     }
   }

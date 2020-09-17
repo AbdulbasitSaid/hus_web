@@ -60,6 +60,7 @@ body #navbar .navbar img {
 }
 
 body #hero .hero {
+  transition: 3s ease all;
   position: relative;
   z-index: 1;
   grid-area: hero;
@@ -112,6 +113,7 @@ body #hero a img {
 }
 
 body .moto {
+  transition: 3s ease all;
   padding: 4rem;
   grid-area: moto;
 }
@@ -122,6 +124,7 @@ body .moto p {
 }
 
 body #about .about {
+  transition: 3s ease all;
   grid-area: about;
   display: flex;
   flex-direction: column;
@@ -161,6 +164,7 @@ body #about .about::after {
 }
 
 body #why-us .why-us {
+  transition: 3s ease all;
   padding: 4rem;
 }
 
@@ -179,6 +183,7 @@ body #why-us .why-us .why-text h1 {
 }
 
 body #services .services {
+  transition: 3s ease all;
   padding: 6rem 2rem;
   display: flex;
   flex-direction: column;
@@ -232,4 +237,22 @@ body #services .services:after {
   opacity: 0.9;
   position: absolute;
   z-index: -1;
+}
+
+body #contact .contact {
+  min-height: 100vh;
+}
+
+body #contact .contact .first-line {
+  background-color: #6EAF8D;
+  height: 20px;
+}
+
+body #contact .contact .col-1 {
+  padding: 0 4rem 4rem 4rem;
+}
+
+body #contact .contact .col-1 .contact-items {
+  background-color: #6B7E91;
+  min-height: 60vw;
 }

@@ -285,18 +285,19 @@ footer {
     }
   }
   .footer-items {
-    padding: 4rem;
-    display: grid;
-    justify-content: center;
-    align-content: center;
+    padding: 4rem ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     gap: 2rem;
     .social-icons{
       display: grid;
       grid-template: 1fr/ repeat(3,1fr);
       justify-content: center;
       align-items: center;
-      align-content: space-around;
+      align-content: space-evenly;
       font-size: 30px;
+      span{display: inline-block;}
     }
   }
 }

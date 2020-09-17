@@ -298,9 +298,9 @@ footer .fly-top a {
 
 footer .footer-items {
   padding: 4rem;
-  display: grid;
-  justify-content: center;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   gap: 2rem;
 }
 
@@ -309,6 +309,10 @@ footer .footer-items .social-icons {
   grid-template: 1fr/repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  align-content: space-around;
+  align-content: space-evenly;
   font-size: 30px;
+}
+
+footer .footer-items .social-icons span {
+  display: inline-block;
 }

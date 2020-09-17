@@ -276,6 +276,7 @@ footer {
   min-height: 30vh;
   background-color: #6B7E91;
   position: relative;
+  color: white;
 }
 
 footer .fly-top {
@@ -293,4 +294,21 @@ footer .fly-top {
 
 footer .fly-top a {
   color: white;
+}
+
+footer .footer-items {
+  padding: 4rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 2rem;
+}
+
+footer .footer-items .social-icons {
+  display: grid;
+  grid-template: 1fr/repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  font-size: 30px;
 }

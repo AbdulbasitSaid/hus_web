@@ -66,7 +66,7 @@ body {
       background-image: url("/img/img.jpg");
       top: 0;
       left: 0;
-      background-color: gray;
+      background-color: $shade-color;
       display: flex;
 
       flex-direction: column;
@@ -97,10 +97,11 @@ body {
       left: 0;
       position: absolute;
       content: "";
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: $shade-color;
       height: 100%;
       width: 100%;
       z-index: -1;
+      opacity: .9;
     }
     a {
       img {
@@ -153,10 +154,11 @@ body {
       left: 0;
       position: absolute;
       content: "";
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: $shade-color;
       height: 100%;
       width: 100%;
       z-index: -1;
+      opacity: .9;
     }
   }
   #why-us {
@@ -224,7 +226,7 @@ body {
         top: 0;
         left: 0;
         content: " ";
-        background-color: #000000;
+        background-color: $shade-color;
         width: 100%;
         height: 100%;
         opacity: 0.9;
@@ -243,10 +245,24 @@ body {
       .col-1{
         padding: 0 4rem 4rem 4rem;
         .contact-items{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-content: center;
           background-color: $shade-color;
-          min-height: 60vw;
+          min-height: 60vh;
+          padding: 4rem;
+          gap: 2rem;
+          text-align: center;
+          color: white;
+          h2{text-transform: uppercase;
+          padding: 6px;}
         }
       }
     }
   }
+}
+footer{
+  min-height: 30vh;
+  background-color: $shade-color;
 }

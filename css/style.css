@@ -106,7 +106,7 @@ body #hero .hero::after {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 body #hero a img {
@@ -162,7 +162,7 @@ body #about .about::after {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 body #why-us .why-us {
@@ -275,4 +275,22 @@ body #contact .contact .col-1 .contact-items h2 {
 footer {
   min-height: 30vh;
   background-color: #6B7E91;
+  position: relative;
+}
+
+footer .fly-top {
+  text-align: center;
+  color: white;
+  padding: 4px;
+  height: 50px;
+  width: 30px;
+  background-color: #627485;
+  position: absolute;
+  top: -25px;
+  left: calc(50vw - 30px);
+  z-index: 100;
+}
+
+footer .fly-top a {
+  color: white;
 }

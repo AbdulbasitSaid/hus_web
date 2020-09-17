@@ -101,7 +101,7 @@ body {
       height: 100%;
       width: 100%;
       z-index: -1;
-      opacity: .9;
+      opacity: 0.9;
     }
     a {
       img {
@@ -158,7 +158,7 @@ body {
       height: 100%;
       width: 100%;
       z-index: -1;
-      opacity: .9;
+      opacity: 0.9;
     }
   }
   #why-us {
@@ -238,13 +238,13 @@ body {
   #contact {
     .contact {
       min-height: 100vh;
-      .first-line{
+      .first-line {
         background-color: $primary-color;
         height: 20px;
       }
-      .col-1{
+      .col-1 {
         padding: 0 4rem 4rem 4rem;
-        .contact-items{
+        .contact-items {
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -255,14 +255,32 @@ body {
           gap: 2rem;
           text-align: center;
           color: white;
-          h2{text-transform: uppercase;
-          padding: 6px;}
+          h2 {
+            text-transform: uppercase;
+            padding: 6px;
+          }
         }
       }
     }
   }
 }
-footer{
+footer {
   min-height: 30vh;
   background-color: $shade-color;
+  position: relative;
+  .fly-top {
+    text-align: center;
+    color: white;
+    padding: 4px;
+    height: 50px;
+    width: 30px;
+    background-color: darken($color: $shade-color, $amount: 4);
+    position: absolute;
+    top: -25px;
+    left: calc(50vw - 30px);
+    z-index: 100;
+    a {
+      color: white;
+    }
+  }
 }

@@ -43,7 +43,6 @@ body #navbar {
 }
 
 body #navbar .navbar {
-  height: 60px;
   z-index: 10;
   position: fixed;
   background-color: #6B7E91;
@@ -181,7 +180,12 @@ body #why-us {
 
 body #why-us .why-us {
   transition: 3s ease all;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 4rem;
+  height: 100%;
 }
 
 body #why-us .why-us .why-text {
@@ -205,8 +209,7 @@ body #services {
 body #services .services {
   transition: 3s ease all;
   padding: 6rem 2rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 2rem;
   justify-content: center;
   align-items: center;
@@ -249,7 +252,7 @@ body #services .services .service-item:hover {
 
 body #services .services:after {
   top: 0;
-  left: 0;
+  right: 0;
   content: " ";
   background-color: #6B7E91;
   width: 100%;
@@ -360,13 +363,36 @@ body #contact .contact .col-1 .contact-items h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about about" "why-us why-us" "services services" "contact contact" "footer footer";
+    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about why-us" "services services" "contact contact" "footer footer";
   }
   #about .about {
     background-color: red;
-    background-image: none !important;
   }
   #about .about p {
     font-size: 13px;
+  }
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+  }
+  .services::after {
+    top: 0;
+    content: " ";
+    background-color: white;
+    width: 50% !important;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    z-index: -1;
+  }
+  .services::before {
+    top: 0;
+    content: " ";
+    background-color: white;
+    width: 50% !important;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    z-index: -1;
   }
 }

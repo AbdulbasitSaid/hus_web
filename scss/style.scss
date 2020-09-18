@@ -44,7 +44,6 @@ body {
   #navbar {
     grid-area: navbar;
     .navbar {
-      height: 60px;
       z-index: 10;
       position: fixed;
       background-color: $shade-color;
@@ -173,8 +172,12 @@ body {
 
     .why-us {
       transition: 3s ease all;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 4rem;
+      height: 100%;
       .why-text {
         background-color: $primary-color;
         padding: 2rem;
@@ -194,12 +197,9 @@ body {
     grid-area: services;
 
     .services {
-
       transition: 3s ease all;
-
       padding: 6rem 2rem;
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 2rem;
       justify-content: center;
       align-items: center;
@@ -236,7 +236,7 @@ body {
       }
       &:after {
         top: 0;
-        left: 0;
+        right: 0;
         content: " ";
         background-color: $shade-color;
         width: 100%;
@@ -348,8 +348,7 @@ body {
   "navbar navbar"
   "hero hero"
   "moto moto"
-  "about about"
-  "why-us why-us"
+  "about why-us"
   "services services"
   "contact contact"
   "footer footer"
@@ -362,13 +361,37 @@ body {
     .about {
       background-color: red;
 
-      background-image: none !important;
+      // background-image: none !important;
 
       p {
         font-size: 13px;
       }
     }
 
+  }
+    .services{
+      grid-template-columns: repeat(2,1fr);
+      position: relative;
+  }
+  .services::after {
+    top: 0;
+    content: " ";
+    background-color: white;
+    width: 50% !important;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    z-index: -1;
+  }
+  .services::before{
+    top: 0;
+    content: " ";
+    background-color: white;
+    width: 50% !important;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    z-index: -1;
   }
 }
 // end media query for pc

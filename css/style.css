@@ -316,3 +316,9 @@ footer .footer-items .social-icons {
 footer .footer-items .social-icons span {
   display: inline-block;
 }
+
+@media only screen and (min-width: 600px) {
+  .about h1 {
+    font-size: 20px;
+  }
+}

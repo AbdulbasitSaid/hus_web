@@ -301,3 +301,11 @@ footer {
     }
   }
 }
+// media query for tablet
+@media only screen and (min-width:600px)
+{
+    .about{
+     h1{font-size: 20px;}
+    }
+}
+// end media query for tablet

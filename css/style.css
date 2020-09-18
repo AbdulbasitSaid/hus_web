@@ -59,7 +59,7 @@ body #navbar .navbar .bana {
 }
 
 body #navbar .navbar img {
-  filter: grayscale(1);
+  filter: grayscale(0);
 }
 
 body #hero {

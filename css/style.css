@@ -287,14 +287,14 @@ body #contact .contact .col-1 .contact-items {
   background-color: #6B7E91;
   min-height: 60vh;
   padding: 4rem;
-  gap: 2rem;
+  gap: 6rem;
   text-align: center;
   color: white;
 }
 
 body #contact .contact .col-1 .contact-items h2 {
   text-transform: uppercase;
-  padding: 6px;
+  padding: 10px 0;
 }
 
 #footer {
@@ -407,7 +407,17 @@ body #contact .contact .col-1 .contact-items h2 {
     padding: 0 !important;
   }
   .contact .col-1 .contact-items {
-    width: 50vw;
+    width: 40vw;
     height: 100vh;
+  }
+  .contact .col-1 .contact-items h2 {
+    text-align: start;
+  }
+  .contact .col-1 .contact-items p {
+    text-align: start;
+    font-size: medium;
+  }
+  .footer .fly-top {
+    left: 90vw !important;
   }
 }

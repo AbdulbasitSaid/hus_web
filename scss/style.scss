@@ -264,12 +264,12 @@ body {
           background-color: $shade-color;
           min-height: 60vh;
           padding: 4rem;
-          gap: 2rem;
+          gap: 6rem;
           text-align: center;
           color: white;
           h2 {
             text-transform: uppercase;
-            padding: 6px;
+            padding: 10px 0;
           }
         }
       }
@@ -365,13 +365,15 @@ body {
   .services {
     grid-template-columns: repeat(2, 1fr);
     // position: relative;
-    p{
+    p {
       font-size: medium;
     }
     .service-item {
       &:nth-child(odd) {
         color: black !important;
-        .fa{color: black !important;}
+        .fa {
+          color: black !important;
+        }
       }
     }
   }
@@ -396,13 +398,25 @@ body {
     z-index: -1;
   }
 
-  .contact{
-    .col-1{
+  .contact {
+    .col-1 {
       padding: 0 !important;
-      .contact-items{
-        width: 50vw;
+      .contact-items {
+        width: 40vw;
         height: 100vh;
+        h2 {
+          text-align: start;
+        }
+        p {
+          text-align: start;
+          font-size: medium;
+        }
       }
+    }
+  }
+  .footer{
+    .fly-top{
+      left: 90vw !important;
     }
   }
 }

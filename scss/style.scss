@@ -12,8 +12,21 @@ html {
   letter-spacing: 0.1rem;
 }
 body {
+ .main{
   background-color: $background-color;
-
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "navbar"
+    "hero"
+    "moto"
+    "about"
+    "why-us"
+    "services"
+    "contact"
+    "footer";
+ }
   img {
     width: 100%;
   }
@@ -22,91 +35,62 @@ body {
     background-position: top center;
   }
 
-  .menu {
-    width: 40px;
-    height: 40px;
-    display: block;
-    position: relative;
-    .list,
-    .content {
-      height: 100%;
-      top: 0;
-      display: flex;
-      position: fixed;
-      align-items: center;
-      flex-flow: column wrap;
-      justify-content: center;
-      z-index: -1;
-      transition: all 0.75s ease;
-    }
-    .list {
-      background: #26d07c;
-      width: 120px;
-      left: -120px;
-      opacity: 0;
-    }
-    .list span {
-      background: #fff;
-      width: 100px;
-      margin: 5px 0;
-      padding: 10px 0;
-      text-align: center;
-      border-radius: 4px;
-    }
-
-    .btn {
-      background: #000;
-      width: 40px;
-      height: 40px;
-      top: 10px;
-      left: 10px;
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      z-index: 100;
-    }
-    .btn:before,
-    .btn:after {
-      background: #fff;
-      width: 20px;
-      height: 2px;
-      left: 10px;
-      display: block;
-      position: absolute;
-      content: "";
-      transition: all 0.75s ease;
-    }
-    .content {
-      left: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-
-      grid-template-rows: auto;
-      grid-template-areas:
-        "hero"
-        "moto"
-        "about"
-        "why-us"
-        "services"
-        "contact"
-        "footer";
-    }
-  }
-
-  .btn:before{top:16px}
-.btn:after{bottom:16px}
-
-.menu:focus-within .list{left:0;opacity:1}
-.menu:focus-within .content{width:calc(100% - 120px);left:120px}
-.menu:focus-within .btn:before{transform:rotate(45deg) translate(2px,2px)}
-.menu:focus-within .btn:after{transform:rotate(-45deg) translate(2px,-2px)}
   a {
     text-decoration: none;
   }
-  li {
-    direction: none;
+  .sidebar{
+    float: right;
+    right: 0;
+    position: fixed;
+    width: 40vw;
+    height: 100vh;
+    background-color: $shade-color;
+    z-index: 100;
+    padding: 2rem;
+    transition: 2s;
+    a{display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-weight: 300;
+      padding: 1rem ;
+      transition: .8s;
+      &:hover{
+        font-weight: bolder;
+        font-size: large;
+        padding: 1.5rem;
+      }
+    }
   }
-
+  #navbar {
+    grid-area: navbar;
+    .navbar {
+      right: 0;
+      left: 0;
+      position: fixed;
+      background-color: $background-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     padding:10px 4rem;
+     z-index: 2;
+      .bana {
+        width: 60px;
+      }
+      .nav{
+        display: none;
+      }
+      img {
+        filter: grayscale(0);
+      }
+      li {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+      }
+    }
+  }
   #hero {
     grid-area: hero;
     .hero {
@@ -384,16 +368,18 @@ body {
 
 // media query for pc
 @media only screen and (min-width: 1024px) {
-  .content {
-    grid-template-columns: 1fr 1fr !important;
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
+      "navbar navbar"
       "hero hero"
       "moto moto"
       "about why-us"
       "services services"
       "contact contact"
-      "footer footer" !important;
+      "footer footer";
   }
 
   #about {
@@ -447,7 +433,7 @@ body {
     .col-1 {
       padding: 0 !important;
       .contact-items {
-        width: 50%;
+        width: 40vw;
         height: 100vh;
         h2 {
           text-align: start;
@@ -459,14 +445,14 @@ body {
       }
     }
   }
-  .footer {
-    .footer-items {
+  .footer{
+    .footer-items{
       flex-direction: row !important;
-      align-content: space-between !important;
+      align-content:space-between !important;
       justify-content: center;
       align-items: center;
     }
-    .fly-top {
+    .fly-top{
       left: 90vw !important;
     }
   }

@@ -13,8 +13,12 @@ html {
   letter-spacing: 0.1rem;
 }
 
-body {
+body .main {
   background-color: #fafafa;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "navbar" "hero" "moto" "about" "why-us" "services" "contact" "footer";
 }
 
 body img {
@@ -26,106 +30,71 @@ body .bg-img {
   background-position: top center;
 }
 
-body .menu {
-  width: 40px;
-  height: 40px;
-  display: block;
-  position: relative;
-}
-
-body .menu .list,
-body .menu .content {
-  height: 100%;
-  top: 0;
-  display: flex;
-  position: fixed;
-  align-items: center;
-  flex-flow: column wrap;
-  justify-content: center;
-  z-index: -1;
-  transition: all 0.75s ease;
-}
-
-body .menu .list {
-  background: #26d07c;
-  width: 120px;
-  left: -120px;
-  opacity: 0;
-}
-
-body .menu .list span {
-  background: #fff;
-  width: 100px;
-  margin: 5px 0;
-  padding: 10px 0;
-  text-align: center;
-  border-radius: 4px;
-}
-
-body .menu .btn {
-  background: #000;
-  width: 40px;
-  height: 40px;
-  top: 10px;
-  left: 10px;
-  display: block;
-  position: absolute;
-  border-radius: 50%;
-  z-index: 100;
-}
-
-body .menu .btn:before,
-body .menu .btn:after {
-  background: #fff;
-  width: 20px;
-  height: 2px;
-  left: 10px;
-  display: block;
-  position: absolute;
-  content: "";
-  transition: all 0.75s ease;
-}
-
-body .menu .content {
-  left: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "hero" "moto" "about" "why-us" "services" "contact" "footer";
-}
-
-body .btn:before {
-  top: 16px;
-}
-
-body .btn:after {
-  bottom: 16px;
-}
-
-body .menu:focus-within .list {
-  left: 0;
-  opacity: 1;
-}
-
-body .menu:focus-within .content {
-  width: calc(100% - 120px);
-  left: 120px;
-}
-
-body .menu:focus-within .btn:before {
-  transform: rotate(45deg) translate(2px, 2px);
-}
-
-body .menu:focus-within .btn:after {
-  transform: rotate(-45deg) translate(2px, -2px);
-}
-
 body a {
   text-decoration: none;
 }
 
-body li {
-  direction: none;
+body .sidebar {
+  float: right;
+  right: 0;
+  position: fixed;
+  width: 40vw;
+  height: 100vh;
+  background-color: #6B7E91;
+  z-index: 100;
+  padding: 2rem;
+  transition: 2s;
+}
+
+body .sidebar a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  padding: 1rem;
+  transition: .8s;
+}
+
+body .sidebar a:hover {
+  font-weight: bolder;
+  font-size: large;
+  padding: 1.5rem;
+}
+
+body #navbar {
+  grid-area: navbar;
+}
+
+body #navbar .navbar {
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4rem;
+  z-index: 2;
+}
+
+body #navbar .navbar .bana {
+  width: 60px;
+}
+
+body #navbar .navbar .nav {
+  display: none;
+}
+
+body #navbar .navbar img {
+  filter: grayscale(0);
+}
+
+body #navbar .navbar li {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
 }
 
 body #hero {
@@ -425,10 +394,11 @@ body #contact .contact .col-1 .contact-items h2 {
 }
 
 @media only screen and (min-width: 1024px) {
-  .content {
-    grid-template-columns: 1fr 1fr !important;
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "hero hero" "moto moto" "about why-us" "services services" "contact contact" "footer footer" !important;
+    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about why-us" "services services" "contact contact" "footer footer";
   }
   #about .about {
     background-color: red;
@@ -472,7 +442,7 @@ body #contact .contact .col-1 .contact-items h2 {
     padding: 0 !important;
   }
   .contact .col-1 .contact-items {
-    width: 50%;
+    width: 40vw;
     height: 100vh;
   }
   .contact .col-1 .contact-items h2 {

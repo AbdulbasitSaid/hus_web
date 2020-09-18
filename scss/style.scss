@@ -21,7 +21,12 @@ body {
     "navbar"
     "hero"
     "moto"
-    "about";
+    "about"
+    "why-us"
+    "services"
+    "contact"
+    "footer"
+    ;
   img {
     width: 100%;
   }
@@ -40,7 +45,7 @@ body {
     .navbar {
       z-index: 10;
       position: fixed;
-      background-color: transparent;
+      background-color: $shade-color;
       grid-area: navbar;
       display: flex;
       align-items: center;
@@ -110,6 +115,7 @@ body {
     }
   }
   .moto {
+
     transition: 3s ease all;
 
     padding: 4rem;
@@ -122,7 +128,7 @@ body {
   }
   #about {
     .about {
-      transition: 3s ease all;
+      transition: 3s ease;
 
       grid-area: about;
       display: flex;
@@ -164,6 +170,7 @@ body {
   #why-us {
     .why-us {
       transition: 3s ease all;
+      grid-area: why-us;
 
       padding: 4rem;
       .why-text {
@@ -183,6 +190,8 @@ body {
   }
   #services {
     .services {
+      grid-area: services;
+
       transition: 3s ease all;
 
       padding: 6rem 2rem;
@@ -237,6 +246,8 @@ body {
   }
   #contact {
     .contact {
+      grid-area: contact;
+
       min-height: 100vh;
       .first-line {
         background-color: $primary-color;
@@ -264,7 +275,8 @@ body {
     }
   }
 }
-footer {
+.footer {
+  grid-area: footer;
   min-height: 30vh;
   background-color: $shade-color;
   position: relative;
@@ -285,27 +297,73 @@ footer {
     }
   }
   .footer-items {
-    padding: 4rem ;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     text-align: center;
     gap: 2rem;
-    .social-icons{
+    .social-icons {
       display: grid;
-      grid-template: 1fr/ repeat(3,1fr);
+      grid-template: 1fr / repeat(3, 1fr);
       justify-content: center;
       align-items: center;
       align-content: space-evenly;
       font-size: 30px;
-      span{display: inline-block;}
+      span {
+        display: inline-block;
+      }
     }
   }
 }
 // media query for tablet
-@media only screen and (min-width:600px)
-{
-    .about{
-     h1{font-size: 20px;}
+@media only screen and (min-width: 600px) {
+  $p-size: 20px;
+  .about {
+    h1 {
+      font-size: 30px;
     }
+    p {
+      font-size: $p-size;
+    }
+  }
+  .why-us {
+    font-size: large;
+  }
 }
 // end media query for tablet
+
+// media query for pc
+@media only screen and (min-width: 1024px) {
+  body {
+    display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+  "navbar navbar"
+  "hero hero"
+  "moto moto"
+  "about about"
+  "why-us why-us"
+  "services services"
+  "contact contact"
+  "footer footer"
+
+    ;
+    
+  }
+
+ 
+  #about {
+    .about {
+      background-color: red;
+
+      background-image: none !important;
+
+      p {
+        font-size: 13px;
+      }
+    }
+
+  }
+}
+// end media query for pc

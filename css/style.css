@@ -18,7 +18,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-template-areas: "navbar" "hero" "moto" "about";
+  grid-template-areas: "navbar" "hero" "moto" "about" "why-us" "services" "contact" "footer";
 }
 
 body img {
@@ -41,7 +41,7 @@ body li {
 body #navbar .navbar {
   z-index: 10;
   position: fixed;
-  background-color: transparent;
+  background-color: #6B7E91;
   grid-area: navbar;
   display: flex;
   align-items: center;
@@ -125,7 +125,7 @@ body .moto p {
 }
 
 body #about .about {
-  transition: 3s ease all;
+  transition: 3s ease;
   grid-area: about;
   display: flex;
   flex-direction: column;
@@ -167,6 +167,7 @@ body #about .about::after {
 
 body #why-us .why-us {
   transition: 3s ease all;
+  grid-area: why-us;
   padding: 4rem;
 }
 
@@ -185,6 +186,7 @@ body #why-us .why-us .why-text h1 {
 }
 
 body #services .services {
+  grid-area: services;
   transition: 3s ease all;
   padding: 6rem 2rem;
   display: flex;
@@ -242,6 +244,7 @@ body #services .services:after {
 }
 
 body #contact .contact {
+  grid-area: contact;
   min-height: 100vh;
 }
 
@@ -272,14 +275,15 @@ body #contact .contact .col-1 .contact-items h2 {
   padding: 6px;
 }
 
-footer {
+.footer {
+  grid-area: footer;
   min-height: 30vh;
   background-color: #6B7E91;
   position: relative;
   color: white;
 }
 
-footer .fly-top {
+.footer .fly-top {
   text-align: center;
   color: white;
   padding: 4px;
@@ -292,11 +296,11 @@ footer .fly-top {
   z-index: 100;
 }
 
-footer .fly-top a {
+.footer .fly-top a {
   color: white;
 }
 
-footer .footer-items {
+.footer .footer-items {
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -304,7 +308,7 @@ footer .footer-items {
   gap: 2rem;
 }
 
-footer .footer-items .social-icons {
+.footer .footer-items .social-icons {
   display: grid;
   grid-template: 1fr/repeat(3, 1fr);
   justify-content: center;
@@ -313,12 +317,34 @@ footer .footer-items .social-icons {
   font-size: 30px;
 }
 
-footer .footer-items .social-icons span {
+.footer .footer-items .social-icons span {
   display: inline-block;
 }
 
 @media only screen and (min-width: 600px) {
   .about h1 {
+    font-size: 30px;
+  }
+  .about p {
     font-size: 20px;
+  }
+  .why-us {
+    font-size: large;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about about" "why-us why-us" "services services" "contact contact" "footer footer";
+  }
+  #about .about {
+    background-color: red;
+    background-image: none !important;
+  }
+  #about .about p {
+    font-size: 13px;
   }
 }

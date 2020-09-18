@@ -403,4 +403,11 @@ body #contact .contact .col-1 .contact-items h2 {
     position: absolute;
     z-index: -1;
   }
+  .contact .col-1 {
+    padding: 0 !important;
+  }
+  .contact .col-1 .contact-items {
+    width: 50vw;
+    height: 100vh;
+  }
 }

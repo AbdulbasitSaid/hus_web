@@ -42,11 +42,12 @@ body {
     direction: none;
   }
   #navbar {
+    grid-area: navbar;
     .navbar {
+      height: 60px;
       z-index: 10;
       position: fixed;
       background-color: $shade-color;
-      grid-area: navbar;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,11 +63,11 @@ body {
     }
   }
   #hero {
+    grid-area: hero;
     .hero {
       transition: 3s ease all;
       position: relative;
       z-index: 1;
-      grid-area: hero;
       height: 70vh;
       background-image: url("/img/img.jpg");
       top: 0;
@@ -127,10 +128,10 @@ body {
     }
   }
   #about {
+    grid-area: about;
     .about {
       transition: 3s ease;
 
-      grid-area: about;
       display: flex;
       flex-direction: column;
       gap: 3rem;
@@ -168,9 +169,10 @@ body {
     }
   }
   #why-us {
+    grid-area: why-us;
+
     .why-us {
       transition: 3s ease all;
-      grid-area: why-us;
 
       padding: 4rem;
       .why-text {
@@ -189,8 +191,9 @@ body {
     }
   }
   #services {
+    grid-area: services;
+
     .services {
-      grid-area: services;
 
       transition: 3s ease all;
 
@@ -245,8 +248,9 @@ body {
     }
   }
   #contact {
+    grid-area: contact;
+
     .contact {
-      grid-area: contact;
 
       min-height: 100vh;
       .first-line {
@@ -275,42 +279,44 @@ body {
     }
   }
 }
-.footer {
+#footer{
   grid-area: footer;
-  min-height: 30vh;
-  background-color: $shade-color;
-  position: relative;
-  color: white;
-  .fly-top {
-    text-align: center;
+  .footer {
+    min-height: 30vh;
+    background-color: $shade-color;
+    position: relative;
     color: white;
-    padding: 4px;
-    height: 50px;
-    width: 30px;
-    background-color: darken($color: $shade-color, $amount: 4);
-    position: absolute;
-    top: -25px;
-    left: calc(50vw - 30px);
-    z-index: 100;
-    a {
+    .fly-top {
+      text-align: center;
       color: white;
+      padding: 4px;
+      height: 50px;
+      width: 30px;
+      background-color: darken($color: $shade-color, $amount: 4);
+      position: absolute;
+      top: -25px;
+      left: calc(50vw - 30px);
+      z-index: 100;
+      a {
+        color: white;
+      }
     }
-  }
-  .footer-items {
-    padding: 4rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    .social-icons {
-      display: grid;
-      grid-template: 1fr / repeat(3, 1fr);
-      justify-content: center;
-      align-items: center;
-      align-content: space-evenly;
-      font-size: 30px;
-      span {
-        display: inline-block;
+    .footer-items {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+      .social-icons {
+        display: grid;
+        grid-template: 1fr / repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        align-content: space-evenly;
+        font-size: 30px;
+        span {
+          display: inline-block;
+        }
       }
     }
   }
@@ -336,7 +342,7 @@ body {
 @media only screen and (min-width: 1024px) {
   body {
     display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
   "navbar navbar"
@@ -347,7 +353,6 @@ body {
   "services services"
   "contact contact"
   "footer footer"
-
     ;
     
   }

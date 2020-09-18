@@ -38,11 +38,15 @@ body li {
   direction: none;
 }
 
+body #navbar {
+  grid-area: navbar;
+}
+
 body #navbar .navbar {
+  height: 60px;
   z-index: 10;
   position: fixed;
   background-color: #6B7E91;
-  grid-area: navbar;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,11 +63,14 @@ body #navbar .navbar img {
   filter: grayscale(1);
 }
 
+body #hero {
+  grid-area: hero;
+}
+
 body #hero .hero {
   transition: 3s ease all;
   position: relative;
   z-index: 1;
-  grid-area: hero;
   height: 70vh;
   background-image: url("/img/img.jpg");
   top: 0;
@@ -124,9 +131,12 @@ body .moto p {
   text-align: center;
 }
 
+body #about {
+  grid-area: about;
+}
+
 body #about .about {
   transition: 3s ease;
-  grid-area: about;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -165,9 +175,12 @@ body #about .about::after {
   opacity: 0.9;
 }
 
+body #why-us {
+  grid-area: why-us;
+}
+
 body #why-us .why-us {
   transition: 3s ease all;
-  grid-area: why-us;
   padding: 4rem;
 }
 
@@ -185,8 +198,11 @@ body #why-us .why-us .why-text h1 {
   border: 1px solid white;
 }
 
-body #services .services {
+body #services {
   grid-area: services;
+}
+
+body #services .services {
   transition: 3s ease all;
   padding: 6rem 2rem;
   display: flex;
@@ -243,8 +259,11 @@ body #services .services:after {
   z-index: -1;
 }
 
-body #contact .contact {
+body #contact {
   grid-area: contact;
+}
+
+body #contact .contact {
   min-height: 100vh;
 }
 
@@ -275,15 +294,18 @@ body #contact .contact .col-1 .contact-items h2 {
   padding: 6px;
 }
 
-.footer {
+#footer {
   grid-area: footer;
+}
+
+#footer .footer {
   min-height: 30vh;
   background-color: #6B7E91;
   position: relative;
   color: white;
 }
 
-.footer .fly-top {
+#footer .footer .fly-top {
   text-align: center;
   color: white;
   padding: 4px;
@@ -296,11 +318,11 @@ body #contact .contact .col-1 .contact-items h2 {
   z-index: 100;
 }
 
-.footer .fly-top a {
+#footer .footer .fly-top a {
   color: white;
 }
 
-.footer .footer-items {
+#footer .footer .footer-items {
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -308,7 +330,7 @@ body #contact .contact .col-1 .contact-items h2 {
   gap: 2rem;
 }
 
-.footer .footer-items .social-icons {
+#footer .footer .footer-items .social-icons {
   display: grid;
   grid-template: 1fr/repeat(3, 1fr);
   justify-content: center;
@@ -317,7 +339,7 @@ body #contact .contact .col-1 .contact-items h2 {
   font-size: 30px;
 }
 
-.footer .footer-items .social-icons span {
+#footer .footer .footer-items .social-icons span {
   display: inline-block;
 }
 
@@ -336,7 +358,7 @@ body #contact .contact .col-1 .contact-items h2 {
 @media only screen and (min-width: 1024px) {
   body {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about about" "why-us why-us" "services services" "contact contact" "footer footer";
   }

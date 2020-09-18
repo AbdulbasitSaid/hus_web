@@ -373,7 +373,15 @@ body #contact .contact .col-1 .contact-items h2 {
   }
   .services {
     grid-template-columns: repeat(2, 1fr);
-    position: relative;
+  }
+  .services p {
+    font-size: medium;
+  }
+  .services .service-item:nth-child(odd) {
+    color: black !important;
+  }
+  .services .service-item:nth-child(odd) .fa {
+    color: black !important;
   }
   .services::after {
     top: 0;

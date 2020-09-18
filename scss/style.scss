@@ -25,8 +25,7 @@ body {
     "why-us"
     "services"
     "contact"
-    "footer"
-    ;
+    "footer";
   img {
     width: 100%;
   }
@@ -115,7 +114,6 @@ body {
     }
   }
   .moto {
-
     transition: 3s ease all;
 
     padding: 4rem;
@@ -251,7 +249,6 @@ body {
     grid-area: contact;
 
     .contact {
-
       min-height: 100vh;
       .first-line {
         background-color: $primary-color;
@@ -279,7 +276,7 @@ body {
     }
   }
 }
-#footer{
+#footer {
   grid-area: footer;
   .footer {
     min-height: 30vh;
@@ -342,21 +339,18 @@ body {
 @media only screen and (min-width: 1024px) {
   body {
     display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "navbar navbar"
-  "hero hero"
-  "moto moto"
-  "about why-us"
-  "services services"
-  "contact contact"
-  "footer footer"
-    ;
-    
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "navbar navbar"
+      "hero hero"
+      "moto moto"
+      "about why-us"
+      "services services"
+      "contact contact"
+      "footer footer";
   }
 
- 
   #about {
     .about {
       background-color: red;
@@ -367,11 +361,19 @@ body {
         font-size: 13px;
       }
     }
-
   }
-    .services{
-      grid-template-columns: repeat(2,1fr);
-      position: relative;
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    // position: relative;
+    p{
+      font-size: medium;
+    }
+    .service-item {
+      &:nth-child(odd) {
+        color: black !important;
+        .fa{color: black !important;}
+      }
+    }
   }
   .services::after {
     top: 0;
@@ -383,7 +385,7 @@ body {
     position: absolute;
     z-index: -1;
   }
-  .services::before{
+  .services::before {
     top: 0;
     content: " ";
     background-color: white;

@@ -415,6 +415,12 @@ body {
     }
   }
   .footer{
+    .footer-items{
+      flex-direction: row !important;
+      align-content:space-between !important;
+      justify-content: center;
+      align-items: center;
+    }
     .fly-top{
       left: 90vw !important;
     }

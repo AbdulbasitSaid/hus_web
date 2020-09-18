@@ -417,6 +417,12 @@ body #contact .contact .col-1 .contact-items h2 {
     text-align: start;
     font-size: medium;
   }
+  .footer .footer-items {
+    flex-direction: row !important;
+    align-content: space-between !important;
+    justify-content: center;
+    align-items: center;
+  }
   .footer .fly-top {
     left: 90vw !important;
   }

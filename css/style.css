@@ -13,12 +13,18 @@ html {
   letter-spacing: 0.1rem;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 body .main {
   background-color: #fafafa;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas: "navbar" "hero" "moto" "about" "why-us" "services" "contact" "footer";
+  transition: 1s;
+  overflow-x: hidden;
 }
 
 body img {
@@ -34,16 +40,37 @@ body a {
   text-decoration: none;
 }
 
+body .btn-drawer {
+  width: 40px;
+  height: 40px;
+  background-color: #6B7E91;
+  text-align: center;
+  padding: 2px;
+}
+
+body .btn-drawer i {
+  color: white;
+}
+
 body .sidebar {
   float: right;
+  top: 0;
   right: 0;
+  width: 0;
+  align-self: start;
   position: fixed;
-  width: 40vw;
+  opacity: 0;
+  visibility: hidden;
   height: 100vh;
   background-color: #6B7E91;
-  z-index: 100;
+  z-index: 10;
   padding: 2rem;
-  transition: 2s;
+  overflow-x: hidden;
+  transition: all 1s;
+}
+
+body .sidebar i {
+  color: white;
 }
 
 body .sidebar a {
@@ -53,7 +80,7 @@ body .sidebar a {
   color: white;
   font-weight: 300;
   padding: 1rem;
-  transition: .8s;
+  transition: 0.8s;
 }
 
 body .sidebar a:hover {
@@ -76,6 +103,7 @@ body #navbar .navbar {
   align-items: center;
   padding: 10px 4rem;
   z-index: 2;
+  overflow-x: hidden;
 }
 
 body #navbar .navbar .bana {
@@ -84,6 +112,21 @@ body #navbar .navbar .bana {
 
 body #navbar .navbar .nav {
   display: none;
+}
+
+body #navbar .navbar .nav a {
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  transition: all 1s;
+}
+
+body #navbar .navbar .nav a:hover {
+  color: white;
+  background-color: #6B7E91;
+  font-weight: bold;
+  font-size: large;
 }
 
 body #navbar .navbar img {
@@ -396,9 +439,18 @@ body #contact .contact .col-1 .contact-items h2 {
 @media only screen and (min-width: 1024px) {
   .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 50vw) !important;
     grid-template-rows: auto;
-    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about why-us" "services services" "contact contact" "footer footer";
+    grid-template-areas: "navbar navbar" "hero hero" "moto moto" "about why-us" "services services" "contact contact" "footer footer" !important;
+  }
+  .nav {
+    display: block !important;
+  }
+  .sidebar {
+    display: none;
+  }
+  .btn-drawer {
+    display: none;
   }
   #about .about {
     background-color: red;

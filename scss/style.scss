@@ -12,21 +12,24 @@ html {
   letter-spacing: 0.1rem;
 }
 body {
- .main{
-  background-color: $background-color;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "navbar"
-    "hero"
-    "moto"
-    "about"
-    "why-us"
-    "services"
-    "contact"
-    "footer";
- }
+  overflow-x: hidden;
+  .main {
+    background-color: $background-color;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "navbar"
+      "hero"
+      "moto"
+      "about"
+      "why-us"
+      "services"
+      "contact"
+      "footer";
+    transition: 1s;
+    overflow-x: hidden;
+  }
   img {
     width: 100%;
   }
@@ -38,24 +41,43 @@ body {
   a {
     text-decoration: none;
   }
-  .sidebar{
+  .btn-drawer {
+    width: 40px;
+    height: 40px;
+    background-color: $shade-color;
+    text-align: center;
+    padding: 2px;
+    i {
+      color: white;
+    }
+  }
+  .sidebar {
+    i {
+      color: white;
+    }
     float: right;
+    top: 0;
     right: 0;
+    width: 0;
+    align-self: start;
     position: fixed;
-    width: 40vw;
+    opacity: 0;
+    visibility: hidden;
     height: 100vh;
     background-color: $shade-color;
-    z-index: 100;
+    z-index: 10;
     padding: 2rem;
-    transition: 2s;
-    a{display: block;
+    overflow-x: hidden;
+    transition: all 1s;
+    a {
+      display: block;
       text-align: center;
       text-decoration: none;
       color: white;
       font-weight: 300;
-      padding: 1rem ;
-      transition: .8s;
-      &:hover{
+      padding: 1rem;
+      transition: 0.8s;
+      &:hover {
         font-weight: bolder;
         font-size: large;
         padding: 1.5rem;
@@ -72,13 +94,27 @@ body {
       display: flex;
       justify-content: space-between;
       align-items: center;
-     padding:10px 4rem;
-     z-index: 2;
+      padding: 10px 4rem;
+      z-index: 2;
+      overflow-x: hidden;
       .bana {
         width: 60px;
       }
-      .nav{
+      .nav {
         display: none;
+        a {
+          font-weight: 300;
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+          transition: all 1s;
+          &:hover {
+            color: white;
+            background-color: $shade-color;
+            font-weight: bold;
+            font-size: large;
+          }
+        }
       }
       img {
         filter: grayscale(0);
@@ -370,7 +406,7 @@ body {
 @media only screen and (min-width: 1024px) {
   .main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 50vw) !important;
     grid-template-rows: auto;
     grid-template-areas:
       "navbar navbar"
@@ -379,7 +415,16 @@ body {
       "about why-us"
       "services services"
       "contact contact"
-      "footer footer";
+      "footer footer" !important;
+  }
+  .nav {
+    display: block !important;
+  }
+  .sidebar {
+    display: none;
+  }
+  .btn-drawer {
+    display: none;
   }
 
   #about {
@@ -445,14 +490,14 @@ body {
       }
     }
   }
-  .footer{
-    .footer-items{
+  .footer {
+    .footer-items {
       flex-direction: row !important;
-      align-content:space-between !important;
+      align-content: space-between !important;
       justify-content: center;
       align-items: center;
     }
-    .fly-top{
+    .fly-top {
       left: 90vw !important;
     }
   }
